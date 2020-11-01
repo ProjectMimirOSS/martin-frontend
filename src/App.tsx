@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useContext, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+
+//Custom imports
+import PrivateRoute from './hoc/private-route.hoc';
+import Login from './pages/login/login';
+import HealthDetails from './pages/health-details/health-details';
+
+import { GlobalContext } from './store/global.provider';
+import socketIOClient from "socket.io-client";
+
+//css
 import './App.css';
 
-function App() {
+function App(props: any) {
+  const { state } = useContext(GlobalContext);
+  useEffect(() => {
+    // const socket = socketIOClient('https://albert.stanplus.com');
+    // socket.on("CONNECTED", (data: any) => {
+    //     console.log(data);
+    // });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${state.isDarkThemed ? 'dark' : 'light'}`}>
+     <Router>
+        <Switch>
+          <Route path='/login' component={Login} />
+          <PrivateRoute path='/home' isAuthenticated = {state.isAuthenticated} component={HealthDetails}/>
+          <Redirect exact from='/' to='/home' />
+        </Switch>
+      </Router>
     </div>
   );
 }
