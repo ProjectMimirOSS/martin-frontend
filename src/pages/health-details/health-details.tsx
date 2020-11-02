@@ -7,7 +7,12 @@ import AddService from '../../components/add-service/add-service';
 import { GlobalContext } from '../../store/global.provider';
 const HealthDetails = (props: any) => {
   const [configureService, setConfigureService] = useState(false);
-  const { state } = useContext(GlobalContext)
+  const [search, setsearch] = useState('')
+  const { state } = useContext(GlobalContext);
+  const searchService = (ev: any) => {
+    console.log(ev);
+    setsearch(ev.target.value);
+  }
   return (
     <Fragment>
       <div className={styles.summary__grid}>
@@ -18,7 +23,7 @@ const HealthDetails = (props: any) => {
         <div className={styles.search__ip}>
           <p className={styles.label}>Search</p>
           <div className={styles.input__container}>
-            <input className={styles.input__fld} value={''} />
+            <input className={styles.input__fld} value={search} onChange={searchService} />
           </div>
         </div>
         <button onClick={() => { setConfigureService(true) }} className={styles.ans__btn}>Add New Service</button>

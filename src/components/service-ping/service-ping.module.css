@@ -7,7 +7,7 @@
 .input__fld{
     box-sizing: border-box;
     outline: none;
-    font-size: 18px;
+    font-size: 15px;
     color: var(--albert-text-color);
     width: 100%;
     background: var(--martin-color-light-tint);

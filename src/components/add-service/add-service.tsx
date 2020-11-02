@@ -3,6 +3,16 @@ import styles from './add-service.module.css';
 import Input from "../input/input";
 import ServicePing from "../service-ping/service-ping";
 const AddService = (props: any) => {
+    const _intitalState = {
+        serviceName: ''
+    };
+    const [state, setstate] = useState(_intitalState);
+    const updateNameHandler = (ev: any) => {
+        setstate({
+            ...state,
+            serviceName: ev,
+        });
+    }
     return (
         <div className={styles.add__service__component}>
             <div className={styles.title__container}>
@@ -12,9 +22,9 @@ const AddService = (props: any) => {
             <div className={styles.body__section}>
                 <div className={styles.service__section}>
                     <div className={styles.service__name__ip}>
-                        <Input clear value={''} placeholder="Enter Service Name" type="text" name="search" ></Input>
+                        <Input clear value={state.serviceName} placeholder="Enter Service Name" type="text" name="search" changed={updateNameHandler} cleared={updateNameHandler}></Input>
                     </div>
-                    <ServicePing hideInterval></ServicePing>
+                    <ServicePing hideInterval={false}></ServicePing>
                 </div>
                 <div className={styles.response__section}>
                     <h3 className={styles.subtitle}>PARAMETERS</h3>

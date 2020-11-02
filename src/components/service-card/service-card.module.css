@@ -20,7 +20,7 @@
 
 .list__data>p, .list__data>div {
     flex-grow: 1;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 20px;
     flex: 1;
     width: 150px;

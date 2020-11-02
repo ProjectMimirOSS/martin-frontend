@@ -4,10 +4,10 @@ import ReactDOM from "react-dom";
 import { GlobalContext } from "../../store/global.provider";
 
 const Dialog = (props: any) => {
-    const { state, dispatch } = useContext(GlobalContext);
-    const closeDialog = () => {
-        props.onDismiss();
-    }
+    const { state } = useContext(GlobalContext);
+    // const closeDialog = () => {
+    //     props.onDismiss();
+    // }
     if (!props.isOpen) return null;
     return ReactDOM.createPortal(
         <div className={`${styles.app} ${state.isDarkThemed ? 'dark' : 'light'}`}>
