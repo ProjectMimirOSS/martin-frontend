@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Share Tech Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */
+}
+button, ::placeholder {
+  font-family: 'Share Tech Mono', monospace;
 }
 
 p, div, h1, h2, h3, h4, h5, h6, span {
@@ -12,7 +17,7 @@ p, div, h1, h2, h3, h4, h5, h6, span {
 }
 
 p, div {
-  font-size: 14px;
+  font-size: 15px;
   margin: 0;
 }
 
@@ -42,12 +47,12 @@ code {
   --martin-color-tertiary-shade: #5d58e0;
   --martin-color-tertiary-tint: #7974ff;
 
-  --martin-color-success: #80C568;
+  --martin-color-success: #55a630;
   --martin-color-success-rgb: 47, 223, 117;
   --martin-color-success-contrast: #000000;
   --martin-color-success-contrast-rgb: 0, 0, 0;
   --martin-color-success-shade: #29c467;
-  --martin-color-success-tint: #44e283;
+  --martin-color-success-tint: #52b788;
 
   --martin-color-warning: #F5AA41;
   --martin-color-warning-rgb: 255, 213, 52;

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 //Custom imports
@@ -7,19 +7,12 @@ import Login from './pages/login/login';
 import HealthDetails from './pages/health-details/health-details';
 
 import { GlobalContext } from './store/global.provider';
-import socketIOClient from "socket.io-client";
 
 //css
 import './App.css';
 
 function App(props: any) {
   const { state } = useContext(GlobalContext);
-  useEffect(() => {
-    // const socket = socketIOClient('https://albert.stanplus.com');
-    // socket.on("CONNECTED", (data: any) => {
-    //     console.log(data);
-    // });
-  }, []);
   return (
     <div className={`App ${state.isDarkThemed ? 'dark' : 'light'}`}>
      <Router>
